@@ -25,7 +25,7 @@ function autocomplete2(a,arr,val,inp){
 		cinsiyet=isim1[1]+""+isim2[1]
 		
 		
-		if (isim2[0].substr(0, val[1].length).toLocaleLowerCase('tr-TR').replace(/â/i,"a").replace(/î/i,"i").replace(/û/i,"u") == val[1].toLocaleLowerCase('tr-TR') && cinsiyet!="01" && cinsiyet!="10" && isim1[0]!=isim2[0]) {
+		if (isim2[0].substr(0, val[1].length).toLocaleLowerCase('tr-TR').replace(/Ã¢/i,"a").replace(/Ã®/i,"i").replace(/Ã»/i,"u") == val[1].toLocaleLowerCase('tr-TR') && cinsiyet!="01" && cinsiyet!="10" && isim1[0]!=isim2[0]) {
 
 			b = document.createElement("DIV");
          
@@ -134,7 +134,7 @@ function autocomplete(inp, arr) {
 		
 		var a, b, i, val = this.value;
 		
-		val=(val.toLocaleLowerCase('tr-TR')).replace(/â/i,"a").replace(/î/i,"i").replace(/û/i,"u")
+		val=(val.toLocaleLowerCase('tr-TR')).replace(/Ã¢/i,"a").replace(/Ã®/i,"i").replace(/Ã»/i,"u")
 		
 		closeAllLists();
 		if (!val) { return false;}
@@ -159,7 +159,7 @@ function autocomplete(inp, arr) {
         
 	
 
-        if ((e$[0].replace(/â/i,"a").replace(/î/i,"i").replace(/û/i,"u")).substr(0, val.length).toLocaleUpperCase('tr-TR') == val.toLocaleUpperCase('tr-TR')) {
+        if ((e$[0].replace(/Ã¢/i,"a").replace(/Ã®/i,"i").replace(/Ã»/i,"u")).substr(0, val.length).toLocaleUpperCase('tr-TR') == val.toLocaleUpperCase('tr-TR')) {
           b = document.createElement("DIV");
          
 		 b.innerHTML = "<strong>" + e$[0].substr(0, val.length) + "</strong>";
@@ -268,7 +268,7 @@ function cinsiyetBul(e){
 	}
 
 function daDe(e){
-	sesli="aâeýiîoöuûü"
+	sesli="aÃ¢eÃ½iÃ®oÃ¶uÃ»Ã¼"
 	
 	sesliHarf=false
 	ek="da"
@@ -281,9 +281,9 @@ function daDe(e){
 			}
 		}
 	
-	if (harf=="e" || harf=="i" || harf=="ü" || harf=="î"){ek="de"}
+	if (harf=="e" || harf=="i" || harf=="Ã¼" || harf=="Ã®"){ek="de"}
 	
-	return "<b>"+e+"</b>’"+ek
+	return "<b>"+e+"</b>â€™"+ek
 	}
 
 function disabledKontrol(){
@@ -309,7 +309,7 @@ function id(e){return document.getElementById(e)}
 
 function iksin(e,sex){
 	
-	sesli="aâeýiîoöuûü"
+	sesli="aÃ¢eÃ½iÃ®oÃ¶uÃ»Ã¼"
 	
 	sesliHarf=false
 	sira=-1
@@ -324,13 +324,13 @@ function iksin(e,sex){
 			}
 		}
 	
-	if (harf=="a" || harf=="â" || harf=="ý"){ek="ýn"}
-	if (harf=="o" || harf=="u" || harf=="û"){ek="un"}
-	if (harf=="ö" || harf=="ü"){ek="ün"}
+	if (harf=="a" || harf=="Ã¢" || harf=="Ã½"){ek="Ã½n"}
+	if (harf=="o" || harf=="u" || harf=="Ã»"){ek="un"}
+	if (harf=="Ã¶" || harf=="Ã¼"){ek="Ã¼n"}
 	
 	if(sira==e.length){ek="n"+ek}
 	
-	return ozelad(e,sex)+"’"+ek
+	return ozelad(e,sex)+"â€™"+ek
 	}
 
 function ozelAd(e){
@@ -369,7 +369,7 @@ function rastgelePlaceholder(ii){
 	
 	if(isim[0].indexOf(" ")>-1){isim[0]=isim[0].split(" ")[0]}
 	
-	return "Örnek: "+isim[0]
+	return "Ornek: "+isim[0]
 	}
 
 function saatGetir(){
