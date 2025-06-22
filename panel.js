@@ -352,25 +352,7 @@ function ozelad(e,ee){
 	//return e
 	}
 
-function rastgelePlaceholder(ii){
-	
-	if(ii==3){
-		do{
-			isim=isimler[Math.floor(Math.random() * isimler.length)].split(ayrac)
-			}while(isim[1]!=0)
-		
-	}else if(ii==2 || ii==5){
-		do{
-			isim=isimler[Math.floor(Math.random() * isimler.length)].split(ayrac)
-			}while(isim[1]!=1)
-	}else{
-		isim=isimler[Math.floor(Math.random() * isimler.length)].split(ayrac)
-		}	
-	
-	if(isim[0].indexOf(" ")>-1){isim[0]=isim[0].split(" ")[0]}
-	
-	return "Ornek: "+isim[0]
-	}
+
 
 function saatGetir(){
 	if(id("Saat1")){
