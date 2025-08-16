@@ -1,25 +1,23 @@
-﻿
+
 var gezegenler=new Array(),esma$=new Array();
 
 function arapcaFormat(text$,sex){
 	
 	// müenneslik tesi kontrol
-	 if(sex>0){
-	 	text1=text$.split(" ")
-	 	
-	 	for(i=0; i<text1.length;i++){
-	 		
-	 		if( text1[i].slice(-1).charCodeAt(0)==1607 ){
-	 			text1[i]=text1[i].slice(0, text1[i].length-1)+String.fromCharCode(1577)
-	 			
-	 			//alert(text1[i])
-	 			}
-	 		text$=text1.join(" ")
-	 		
-	 		
-	 		}
-	 	
-	 	}
+	if (sex > 0 && document.getElementById("C2").checked) {
+		let text1 = text$.split(" ");
+		
+		for (let i = 0; i < text1.length; i++) {
+			
+			// kelime sonundaki normal He (ه)
+			if (text1[i].slice(-1).charCodeAt(0) == 1607) {
+				// He (ه = U+0647) → Yuvarlak Te (ة = U+0629)
+				text1[i] = text1[i].slice(0, text1[i].length - 1) + String.fromCharCode(1577);
+			}
+		}
+		
+		text$ = text1.join(" ");
+	}
 
 	
 	for(i=0; i<text$.length;i++){
